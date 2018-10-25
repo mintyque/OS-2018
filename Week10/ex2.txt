@@ -1,0 +1,9 @@
+Result of $ ls -i on ~/Week01/file.txt :
+	793069
+Output of $ find ~ -inum 793069
+	/home/myntique/Week01/file.txt
+	/home/myntique/Week10/_ex2.txt
+Output of $ find ~ -inum 793069 -exec rm {}\;
+	no output
+Output of $ find ~ -inum 793069 after $ find ~ -inum 793069 -exec rm {}\;
+	no output

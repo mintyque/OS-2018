@@ -1,0 +1,13 @@
+After creating a file it has following permissions:
+-rwxr-xr-x 1 mintyque mintyque 0 Oct 25 21:25 _ex3.txt
+
+After running $ chmod a-x _ex3.txt:
+-rw-r--r-- 1 mintyque mintyque 0 Oct 25 21:25 _ex3.txt
+
+After running $ chmod uo+rwx _ex3.txt:
+-rwxr--rwx 1 mintyque mintyque 0 Oct 25 21:25 _ex3.txt
+
+Meaning of codes:
+660	- user and group have permissions to write and read, others have none
+775	- user and group have all permissions, others have permissions to read and execute
+777	- everyone has all permissions
