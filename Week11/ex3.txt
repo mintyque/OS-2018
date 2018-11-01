@@ -1,0 +1,15 @@
+First program output:
+	Hello
+	Hello
+
+Second program output:
+	Hello
+	<empty line>
+	<empty line>
+
+printf uses an stdout buffer which is linebuffered by default. This buffer flushes automatically when it encounters 
+new-line character, if it has nothing to flush (empty buffer), it prints an empty line. In the first case when the 
+process is forked the output buffer is not flushed as there are no new-line characters until after fork. Both parent and 
+child processes put "Hello" in a buffer which is then flushed. In the second case the buffer is filled and flushed 
+right after parent's "Hello". After fork buffer encounters new-line character, sees that buffer is empty, 
+prints an empty line twice, as the buffer is not filled between child and parent.
